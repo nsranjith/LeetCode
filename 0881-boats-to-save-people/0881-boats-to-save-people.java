@@ -1,26 +1,26 @@
 class Solution {
     public int numRescueBoats(int[] people, int limit) {
+        int l=0;
+        int h=people.length;
+        int min=Integer.MAX_VALUE;
         Arrays.sort(people);
-        int c=0;
-        int i=0;
-        int j=people.length-1;
-        while(i<=j){
-           int temp1=people[i];
-           int temp2=people[j];
-           int sum=temp1+temp2;
-           if(sum==limit){
+        return valid(0,people,limit);
+    }
+    private int valid(int mid,int[] people,int limit){
+       int i=0;
+       int j=people.length-1;
+       int c=0;
+       while(i<=j){
+           int sum=people[i]+people[j];
+           if(sum>limit){
+               c++;
+               j--;
+           }else if(sum<=limit){
+               c++;
+               j--;
                i++;
-               j--;
-               c++;
-           }else if(sum>limit){
-               j--;
-               c++;
-           }else{
-               i++;
-               j--;
-               c++;
            }
-        }
-        return c;
+       }
+       return c;
     }
 }
