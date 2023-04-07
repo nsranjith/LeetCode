@@ -1,6 +1,16 @@
 class MedianFinder {
     PriorityQueue<Integer> max=new PriorityQueue<Integer>((a,b)->b-a); // left array
     PriorityQueue<Integer> min=new PriorityQueue<Integer>(); //right array
+    /*
+        left array should be less than right
+        and use max heap to store min elements and min heap to store max
+        because for ex:
+        1 2 3
+        
+        2 1  <=  3  all elements are lesser and meadian is max.pop()+min.pop()/2
+        
+        we cannot implement this if we treat min and max otherwise
+    */
     public MedianFinder() {
         
     }
