@@ -135,24 +135,22 @@ class Solution
 	}
 	private void leaves(Node node){
 	    if(node==null) return;
-	 
-	    leaves(node.left);
-	   if(node.left==null && node.right==null){
+	 	 if(node.left==null && node.right==null){
 	        list.add(node.data);
 	    }
+	    leaves(node.left);
+
 	    leaves(node.right);
 	}
 	private void right(Node node){
 	    if(node==null) return;
 	    if(node.right!=null){
 	        right(node.right);
-	        	        list.add(node.data);
-
+	        list.add(node.data);
 	    }
 	    else if(node.left!=null){
 	        right(node.left);
-	        	        list.add(node.data);
-
+	        list.add(node.data);
 	    }
 	}
 }
