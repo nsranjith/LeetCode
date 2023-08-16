@@ -57,14 +57,14 @@ class Solution {
         Arrays.fill(weight,(int)Math.pow(10,8));
         weight[S]=0;
         for(int i=0;i<V-1;i++){
-            for(int j=0;j<edges.size();j++){
+           for(int j=0;j<edges.size();j++){
                 int u=edges.get(j).get(0);
                 int v=edges.get(j).get(1);
                 int wt=edges.get(j).get(2);
-                if(weight[u]!=Integer.MAX_VALUE && weight[u]+wt<weight[v]){
-                    weight[v]=weight[u]+wt;
-                }
-            }
+               if(weight[u]+wt<weight[v]){
+                   weight[v]=weight[u]+wt;
+               }
+           }
         }
         
         // Nth
@@ -73,7 +73,7 @@ class Solution {
                 int u=edges.get(j).get(0);
                 int v=edges.get(j).get(1);
                 int wt=edges.get(j).get(2);
-                if(weight[u]!=Integer.MAX_VALUE && weight[u]+wt<weight[v]){
+                if(weight[u]+wt<weight[v]){
                     return new int[]{-1};
                 }
         }
