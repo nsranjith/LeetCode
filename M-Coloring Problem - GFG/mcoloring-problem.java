@@ -54,7 +54,7 @@ class solve {
         for(int i=1;i<=m;i++){
             if(check(graph,i,n,node)){
                color[node]=i;
-               if(helper(graph,m,n,node+1)) return true;
+               res=res || helper(graph,m,n,node+1);
                color[node]=0;
             }
         }
