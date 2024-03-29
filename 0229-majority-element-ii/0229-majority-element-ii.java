@@ -5,20 +5,20 @@ class Solution {
         int me1=-1;
         int me2=-1;
         for(int i=0;i<nums.length;i++){
-             if(nums[i]==me1){
-                c1++;
-            }else if(nums[i]==me2){
-                c2++;
-            }else if(c1==0){
-                me1=nums[i];
-                c1++;
-            }else if(c2==0){
-                me2=nums[i];
-                c2++;
-            } else{
-                c1--;
-                c2--;
-            }
+           if(nums[i]==me1){
+               c1++;
+           }else if(nums[i]==me2){
+               c2++;
+           }else if(c1==0){
+               me1=nums[i];
+               c1++;
+           }else if(c2==0){
+               me2=nums[i];
+               c2++;
+           }else{
+               c1--;
+               c2--;
+           }
         }
         List<Integer> list=new ArrayList<>();
         int count1=0;
@@ -39,5 +39,6 @@ class Solution {
             list.add(me2);
         }
         return list;
+        
     }
 }
