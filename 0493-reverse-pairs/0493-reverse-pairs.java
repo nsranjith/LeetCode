@@ -40,6 +40,9 @@ class Solution {
        int l=0;
        int c=0;
        while(k<N && l<M){
+          // if((long)left[k]>(long)2*right[l]){
+          //      count+=N-k;
+          //  }
            if(left[k]<right[l]){
                temp[c]=left[k];
                k++;
